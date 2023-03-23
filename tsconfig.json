@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/",
+    "inlineSourceMap": true,
+    "noImplicitAny": true,
+    "module": "commonjs",
+    "target": "es5",
+    "lib": ["es6", "dom"],
+    "esModuleInterop": true,
+    "allowJs": true,
+    "strict": true,
+    "types": ["cypress", "dotenv/config"]
+  
+  },
+  "include": [
+    "node_modules/cypress-file-upload",
+    "cypress/**/*.ts",
+    "cypress/**/*.tsx"
+  ],
+  "exclude": ["node_modules"]
+}
