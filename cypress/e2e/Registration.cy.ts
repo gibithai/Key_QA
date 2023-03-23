@@ -1,8 +1,8 @@
 describe('test registration', () => {
-  const User_email = Math.random().toString(16) + '@ismart.org'
-  const User_password = 'Santasan11'
-  const User_name = 'Mister Key'
-  const User_number = '+7 (930) 444-44-44'
+  const userEmail = Math.random().toString(16) + '@ismart.org'
+  const userPassword = 'Santasan11'
+  const userName = 'Mister Key'
+  const userNumber = '+7 (930) 444-44-44'
 
   it('test registration positive', () => {
     cy.visit('https://canary.ismart.org/auth/register')
@@ -14,12 +14,12 @@ describe('test registration', () => {
     // доп проверка что это форма регистрации
 
     cy.get('.ismart-k1l7r3-email-content > .ismart-d3nllz-TextField-input')
-      .type(User_email)
-      .should('have.value', User_email)
+      .type(userEmail)
+      .should('have.value', userEmail)
 
     cy.get('.ismart-1ppyx0w-password-content > .ismart-d3nllz-TextField-input')
-      .type(User_password)
-      .should('have.value', User_password)
+      .type(userPassword)
+      .should('have.value', userPassword)
 
     cy.get('.ismart-19ev8bo-Button-container').click()
     /* заканчивается форма регистрации
@@ -27,11 +27,9 @@ describe('test registration', () => {
 
     cy.get('.ismart-87he7f-Button-container').click()
 
-    cy.get('.ismart-d3nllz-TextField-input')
-      .type(User_name)
-      .should('have.value', User_name)
+    cy.get('.ismart-d3nllz-TextField-input').type(userName).should('have.value', userName)
 
-    cy.get('.form-control').type(User_number.slice(2)).should('have.value', User_number)
+    cy.get('.form-control').type(userNumber.slice(2)).should('have.value', userNumber)
 
     cy.get('.ismart-87he7f-Button-container').click()
 
