@@ -10,7 +10,7 @@ describe('AuthorizationISMART', () => {
     cy.xpath('//div[@class="ismart-mj4ckr-Flexbox-container"]').click()
     cy.contains('Test1').should('be.visible')
     cy.xpath('//div[@class="ismart-1p15wet-Flexbox-container"]').click()
-    cy.get('.ismart-6zuwx-Flexbox-container').contains('Выйти').click()
+    cy.xpath('//p[contains(text(),"Выйти")]').contains('Выйти').click()
 
     // Авторизация за ученика
 
@@ -22,7 +22,7 @@ describe('AuthorizationISMART', () => {
     cy.xpath('//button[contains(text(),"Войти")]').click()
     cy.xpath('//h1[contains(text(),"Вася Пуговкин")]').click()
     cy.contains('Вася Пуговкин').should('be.visible')
-    cy.get('.ismart-1p15wet-Flexbox-container').click()
-    cy.get('.ismart-1gmbgdm-Paragraph-container').contains('Выйти').click()
+    cy.xpath('//div[@class="ismart-1p15wet-Flexbox-container"]').click()
+    cy.xpath('//p[contains(text(),"Выйти")]').contains('Выйти').click()
   })
 })
