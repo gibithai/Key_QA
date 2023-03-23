@@ -13,7 +13,7 @@ describe('AuthorizationISMART', () => {
     cy.get('.ismart-1p15wet-Flexbox-container').click()
     cy.get('.ismart-6zuwx-Flexbox-container').contains('Выйти').click()
 
-    // Авторизация за ученика
+    // Авторизация за ученикаа
 
     cy.get('.ismart-1p15wet-Flexbox-container').click()
     cy.get('.ismart-1gmbgdm-Paragraph-container').contains('Войти').click()
