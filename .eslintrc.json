@@ -19,15 +19,20 @@
   "overrides": [],
   "parserOptions": {
     "ecmaVersion": "latest",
-    "sourceType": "module"
+    "sourceType": "module",
+    "project": [
+      "./tsconfig.json"
+    ]
   },
+  "ignorePatterns": ["./cypress.config.ts"],
   "rules": {
+    "eslint@typescript-eslint/no-unused-expressions": "off",
     "prettier/prettier": [
       "error",
       {
         "semi": false,
         "singleQuote": true,
-        "trailingComma": "off",
+        "trailingComma": "none",
         "printWidth": 90
       }
     ]

@@ -1,9 +1,10 @@
-import { defineConfig } from "cypress";
+/* eslint-disable @typescript-eslint/space-before-function-paren */
+import { defineConfig } from 'cypress'
 
 export default defineConfig({
-  fixturesFolder: "cypress/fixtures",
-  videosFolder: "cypress/videos",
-  screenshotsFolder: "cypress/screenshots",
+  fixturesFolder: 'cypress/fixtures',
+  videosFolder: 'cypress/videos',
+  screenshotsFolder: 'cypress/screenshots',
   chromeWebSecurity: false,
   viewportWidth: 1920,
   viewportHeight: 1080,
@@ -13,6 +14,6 @@ export default defineConfig({
   e2e: {
     setupNodeEvents(on, config) {
       // implement node event listeners here
-    },
-  },
-});
+    }
+  }
+})

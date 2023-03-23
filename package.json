@@ -10,7 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "@types/dotenv": "^8.2.0",
-    "@types/testing-library__cypress": "^5.0.9",
     "cypress-file-upload": "^5.0.8",
     "dotenv": "^16.0.3",
     "eslint-config-prettier": "^8.8.0",
@@ -22,7 +21,6 @@
     "@testing-library/cypress": "^9.0.0",
     "@types/node": "^18.15.5",
     "@typescript-eslint/eslint-plugin": "^5.43.0",
-    "add": "^2.0.6",
     "cypress": "^12.8.1",
     "eslint": "^8.0.1",
     "eslint-config-standard-with-typescript": "^34.0.1",
@@ -30,7 +28,6 @@
     "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-n": "^15.0.0",
     "eslint-plugin-promise": "^6.0.0",
-    "typescript": "*",
-    "yarn": "^1.22.19"
+    "typescript": "*"
   }
 }
