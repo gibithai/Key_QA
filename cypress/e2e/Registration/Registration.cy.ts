@@ -6,32 +6,35 @@ describe('test registration', () => {
 
   it('test registration positive', () => {
     cy.visit('https://canary.ismart.org/auth/register')
-
-    cy.get('.ismart-4sxigk-Flexbox-container').click()
+    cy.xpath('//div[@class="ismart-4sxigk-Flexbox-container"]').click()
 
     // cy.get('.ismart-mgi866-Flexbox-container')
     // .should('contain', 'Регистрация')
     // доп проверка что это форма регистрации
 
-    cy.get('.ismart-k1l7r3-email-content > .ismart-d3nllz-TextField-input')
+    cy.xpath('//input[@placeholder="Ваша электронная почта"]')
       .type(userEmail)
       .should('have.value', userEmail)
 
-    cy.get('.ismart-1ppyx0w-password-content > .ismart-d3nllz-TextField-input')
+    cy.xpath('//input[@placeholder="Придумайте пароль"]')
       .type(userPassword)
       .should('have.value', userPassword)
 
-    cy.get('.ismart-19ev8bo-Button-container').click()
+    cy.xpath('//button[contains(text(),"Продолжить")]').click()
     /* заканчивается форма регистрации
            и дальше отркывается окно с именем и номером */
 
-    cy.get('.ismart-87he7f-Button-container').click()
+    cy.xpath('//div[@class="ismart-15vthlk-username-content"]').click()
 
-    cy.get('.ismart-d3nllz-TextField-input').type(userName).should('have.value', userName)
+    cy.xpath('//input[@placeholder="Иванова Мария Александровна"]')
+      .type(userName)
+      .should('have.value', userName)
 
-    cy.get('.form-control').type(userNumber.slice(2)).should('have.value', userNumber)
+    cy.xpath('//input[@placeholder="+7 (999) 999-99-99"]')
+      .type(userNumber.slice(2))
+      .should('have.value', userNumber)
 
-    cy.get('.ismart-87he7f-Button-container').click()
+    cy.xpath('//button[contains(text(),"Продолжить")]').click()
 
     cy.reload()
   })
