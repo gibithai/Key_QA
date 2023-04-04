@@ -69,7 +69,33 @@ describe('ParentProfile', () => {
     cy.xpath('//input[@placeholder="Новый пароль"]').type('123456')
     cy.xpath('//input[@placeholder="Повторите пароль"]').type('123456')
     cy.xpath('//button[contains(text(),"Сохранить")]').click()
+    // Почта
+    cy.xpath('//p[contains(text(),"Почта")]').click()
+    cy.xpath('//input[@placeholder="Почта"]').clear().type('ismartTester@yandex.ru')
+    cy.xpath('//button[contains(text(),"Сохранить")]').click()
+    cy.xpath('//input[@placeholder="Почта"]').should(
+      'have.value',
+      'ismartTester@yandex.ru'
+    )
+    /*
+    Вставить код проверки письма на почте, когда починят майлер
+    */
+    // Возвращаем стандартную почту
+    cy.xpath('//p[contains(text(),"Почта")]').click()
+    cy.xpath('//input[@placeholder="Почта"]').clear().type('parent@ismart.org')
+    cy.xpath('//button[contains(text(),"Сохранить")]').click()
+    cy.xpath('//input[@placeholder="Почта"]').should('have.value', 'parent@ismart.org')
+    // Аватар
+    const fileName = 'images/avatarParent.jpg' // имя файла с аватаром
+    // Выбираем файл аватара для загрузки на компьютере и загружаем его
+    cy.fixture(fileName).then((fileContent) => {
+      console.log(fileContent)
+      cy.get('input[type="file"]').attachFile({
+        fileContent,
+        fileName,
+        mimeType: 'image/jpeg'
+      })
+      cy.xpath('//button[contains(text(),"Сохранить")]').click()
+    })
   })
 })
-
-// Дописать редактирование почты, и смену аватара!

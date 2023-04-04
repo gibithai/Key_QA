@@ -12,7 +12,7 @@ describe('User avatar change', () => {
   })
 
   it('Allows a user to change their avatar', () => {
-    const fileName = 'avatarParent.jpg' // имя файла с аватаром
+    const fileName = 'images/avatarParent.jpg' // имя файла с аватаром
 
     // Выбираем файл аватара для загрузки на компьютере и загружаем его
     // cy.xpath('//input[@type="file"]').attachFile(fileName).trigger('change', {force: true });
@@ -24,7 +24,7 @@ describe('User avatar change', () => {
         mimeType: 'image/jpeg'
       })
       // Кликаем по кнопке "Save" для сохранения новой аватарки
-      cy.xpath('//button[contains(text(),"Сохранить")]').click()
+      cy.xpath('//button[contains(text(),"Сохранить")]').click().reload()
     })
   })
 })
