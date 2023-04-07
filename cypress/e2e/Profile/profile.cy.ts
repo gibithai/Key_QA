@@ -91,16 +91,17 @@ describe('ParentProfile', () => {
     cy.xpath('//button[contains(text(),"Сохранить")]').click()
     cy.xpath('//input[@placeholder="Почта"]').should('have.value', 'parent@ismart.org')
     // Аватар
-    const fileName = 'images/avatarParent.jpg' // имя файла с аватаром
-    // Выбираем файл аватара для загрузки на компьютере и загружаем его
-    cy.fixture(fileName).then((fileContent) => {
-      console.log(fileContent)
-      cy.get('input[type="file"]').attachFile({
-        fileContent,
-        fileName,
-        mimeType: 'image/jpeg'
+    const fileName = 'avatarParent.jpg'
+    const fileType = 'image/jpeg'
+    cy.fixture(fileName, 'binary')
+      .then(Cypress.Blob.binaryStringToBlob)
+      .then((fileContent) => {
+        cy.xpath('//input[@type="file"]').attachFile({
+          fileContent,
+          fileName,
+          mimeType: fileType
+        })
+        cy.contains('Сохранить').click()
       })
-      cy.xpath('//button[contains(text(),"Сохранить")]').click()
-    })
   })
 })
