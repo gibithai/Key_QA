@@ -18,7 +18,7 @@ describe('User avatar change', () => {
     // cy.xpath('//input[@type="file"]').attachFile(fileName).trigger('change', {force: true });
     cy.fixture(fileName).then((fileContent) => {
       console.log(fileContent)
-      cy.get('input[type="file"]').attachFile({
+      cy.xpath('//input[@type="file"]').attachFile({
         fileContent,
         fileName,
         mimeType: 'image/jpeg'
