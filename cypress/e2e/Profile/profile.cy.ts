@@ -69,7 +69,39 @@ describe('ParentProfile', () => {
     cy.xpath('//input[@placeholder="Новый пароль"]').type('123456')
     cy.xpath('//input[@placeholder="Повторите пароль"]').type('123456')
     cy.xpath('//button[contains(text(),"Сохранить")]').click()
+    // Почта
+    cy.xpath('//p[contains(text(),"Почта")]').click()
+    cy.xpath('//input[@placeholder="Почта"]').clear().type('ismartTester@yandex.ru')
+    cy.xpath('//button[contains(text(),"Сохранить")]').click()
+    cy.xpath('//input[@placeholder="Почта"]').should(
+      'have.value',
+      'ismartTester@yandex.ru'
+    )
+    /*
+    Вставить код проверки письма на почте, когда починят майлер
+    1. cy.visit() - ссылка на яндекс почту
+    2. креды аккаунта ismartTester@yandex.ru ag2R2aUBiCzu
+    3. клик на письмо
+    4. проверка отображения логина и новой почты
+    5. Вернуться в профиль
+    */
+    // Возвращаем стандартную почту
+    cy.xpath('//p[contains(text(),"Почта")]').click()
+    cy.xpath('//input[@placeholder="Почта"]').clear().type('parent@ismart.org')
+    cy.xpath('//button[contains(text(),"Сохранить")]').click()
+    cy.xpath('//input[@placeholder="Почта"]').should('have.value', 'parent@ismart.org')
+    // Аватар
+    const fileName = 'avatarParent.jpg'
+    const fileType = 'image/jpeg'
+    cy.fixture(fileName, 'binary')
+      .then(Cypress.Blob.binaryStringToBlob)
+      .then((fileContent) => {
+        cy.xpath('//input[@type="file"]').attachFile({
+          fileContent,
+          fileName,
+          mimeType: fileType
+        })
+        cy.contains('Сохранить').click()
+      })
   })
 })
-
-// Дописать редактирование почты, и смену аватара!
