@@ -1,11 +1,14 @@
 kind: pipeline
 type: exec
 name: Test
+trigger:
+  event:
+    - custom
 
 steps:
-- name: install-deps
-  commands:
-  - yarn
-- name: run-cypress
-  commands:
-  - yarn start
+  - name: install-deps
+    commands:
+      - yarn
+  - name: run-cypress
+    commands:
+      - yarn start
