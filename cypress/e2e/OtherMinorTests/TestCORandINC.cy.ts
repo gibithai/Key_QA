@@ -21,15 +21,10 @@ describe('Correct and incorrect answer to the question', () => {
       '//p[contains(text(),"Пространственные представления: наверху - внизу")]'
     ).click()
     cy.xpath('//button[contains(text(),"Готово")]').click()
+    cy.wait(5000)
     cy.waitUntil(() =>
       cy
         .xpath('//span[@class="ismart-13jccua-Icon-container"]//*[name()="svg"]')
-        .should('be.visible')
-    )
-    cy.xpath('//span[@class="ismart-13jccua-Icon-container"]//*[name()="svg"]').click()
-    cy.waitUntil(() =>
-      cy
-        .xpath('//span[@class="ismart-2epqce-Icon-container"]//*[name()="svg"]')
         .should('be.visible')
     )
     cy.xpath('//span[@class="ismart-2epqce-Icon-container"]//*[name()="svg"]').click()
