@@ -1,5 +1,5 @@
-describe('Authorization in the student account', () => {
-  it('  Authorization in the student account', () => {
+describe('Task from parent to student', () => {
+  it('Task from parent to student', () => {
     cy.viewport(1920, 1080)
     cy.visit('https://canary.ismart.org/')
     // После авторизации выбрать профиль ученика
