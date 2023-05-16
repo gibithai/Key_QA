@@ -11,118 +11,15 @@ describe('guest diagnostic', () => {
     cy.xpath('//div[@class="ismart-yhm5lg-Flexbox-container"]//div[1]').click()
     cy.xpath('//div[@class="ismart-1tzrjz2-Flexbox-container"]').click()
     cy.xpath('//button[contains(text(),"Начать")]').click()
-    cy.wait(1500)
-    cy.xpath('//span[@class="ismart-13jccua-Icon-container"]//*[name()="svg"]').click()
-    cy.waitUntil(() =>
-      cy
-        .xpath('//span[@class="ismart-13jccua-Icon-container"]//*[name()="svg"]')
-        .should('be.visible')
-    )
-    cy.wait(1500)
-    cy.xpath('//span[@class="ismart-13jccua-Icon-container"]//*[name()="svg"]').click()
-    cy.waitUntil(() =>
-      cy
-        .xpath('//span[@class="ismart-13jccua-Icon-container"]//*[name()="svg"]')
-        .should('be.visible')
-    )
-    cy.wait(1500)
-    cy.xpath('//span[@class="ismart-13jccua-Icon-container"]//*[name()="svg"]').click()
-    cy.wait(1500)
-    cy.xpath('//span[@class="ismart-2epqce-Icon-container"]//*[name()="svg"]')
-    cy.wait(1500)
-    cy.xpath('//span[@class="ismart-2epqce-Icon-container"]//*[name()="svg"]')
-    cy.wait(1500)
-    cy.xpath('//span[@class="ismart-13jccua-Icon-container"]//*[name()="svg"]').click()
-    cy.waitUntil(() =>
-      cy
-        .xpath('//span[@class="ismart-13jccua-Icon-container"]//*[name()="svg"]')
-        .should('be.visible')
-    )
-    cy.wait(1500)
-    cy.xpath('//span[@class="ismart-13jccua-Icon-container"]//*[name()="svg"]').click()
-    cy.wait(1500)
-    cy.xpath('//span[@class="ismart-2epqce-Icon-container"]//*[name()="svg"]')
-    cy.wait(1500)
-    cy.xpath('//span[@class="ismart-2epqce-Icon-container"]//*[name()="svg"]')
-    cy.wait(1500)
-    cy.xpath('//span[@class="ismart-13jccua-Icon-container"]//*[name()="svg"]').click()
-    cy.waitUntil(() =>
-      cy
-        .xpath('//span[@class="ismart-13jccua-Icon-container"]//*[name()="svg"]')
-        .should('be.visible')
-    )
-    cy.wait(1500)
-    cy.xpath('//span[@class="ismart-13jccua-Icon-container"]//*[name()="svg"]').click()
-    cy.wait(1500)
-    cy.xpath('//span[@class="ismart-2epqce-Icon-container"]//*[name()="svg"]')
-    cy.wait(1500)
-    cy.xpath('//span[@class="ismart-2epqce-Icon-container"]//*[name()="svg"]')
-    cy.wait(1500)
-    cy.xpath('//span[@class="ismart-13jccua-Icon-container"]//*[name()="svg"]').click()
-    cy.waitUntil(() =>
-      cy
-        .xpath('//span[@class="ismart-13jccua-Icon-container"]//*[name()="svg"]')
-        .should('be.visible')
-    )
-    cy.wait(1500)
-    cy.xpath('//span[@class="ismart-13jccua-Icon-container"]//*[name()="svg"]').click()
-    cy.wait(1500)
-    cy.xpath('//span[@class="ismart-2epqce-Icon-container"]//*[name()="svg"]')
-    cy.wait(1500)
-    cy.xpath('//span[@class="ismart-2epqce-Icon-container"]//*[name()="svg"]')
-    cy.wait(1500)
-    cy.xpath('//span[@class="ismart-13jccua-Icon-container"]//*[name()="svg"]').click()
-    cy.waitUntil(() =>
-      cy
-        .xpath('//span[@class="ismart-13jccua-Icon-container"]//*[name()="svg"]')
-        .should('be.visible')
-    )
-    cy.wait(1500)
-    cy.xpath('//span[@class="ismart-13jccua-Icon-container"]//*[name()="svg"]').click()
-    cy.wait(1500)
-    cy.xpath('//span[@class="ismart-2epqce-Icon-container"]//*[name()="svg"]')
-    cy.wait(1500)
-    cy.xpath('//span[@class="ismart-2epqce-Icon-container"]//*[name()="svg"]')
-    cy.wait(1500)
-    cy.xpath('//span[@class="ismart-13jccua-Icon-container"]//*[name()="svg"]').click()
-    cy.waitUntil(() =>
-      cy
-        .xpath('//span[@class="ismart-13jccua-Icon-container"]//*[name()="svg"]')
-        .should('be.visible')
-    )
-    cy.wait(1500)
-    cy.xpath('//span[@class="ismart-13jccua-Icon-container"]//*[name()="svg"]').click()
-    cy.waitUntil(() =>
-      cy
-        .xpath('//span[@class="ismart-13jccua-Icon-container"]//*[name()="svg"]')
-        .should('be.visible')
-    )
-    cy.wait(1500)
-    cy.xpath(
-      '//span[@class="ismart-2epqce-Icon-container"]//*[name()="svg"]//*[name()="path" and contains(@clip-rule,"evenodd")]'
-    ).click()
-    cy.waitUntil(() =>
-      cy
-        .xpath(
-          '//span[@class="ismart-2epqce-Icon-container"]//*[name()="svg"]//*[name()="path" and contains(@clip-rule,"evenodd")]'
-        )
-        .should('be.visible')
-    )
-    cy.wait(1500)
-    cy.xpath('//span[@class="ismart-2epqce-Icon-container"]//*[name()="svg"]')
-    cy.wait(1500)
-    cy.xpath(
-      '//span[@class="ismart-2epqce-Icon-container"]//*[name()="svg"]//*[name()="path" and contains(@clip-rule,"evenodd")]'
-    ).click()
-    cy.waitUntil(() =>
-      cy
-        .xpath(
-          '//span[@class="ismart-2epqce-Icon-container"]//*[name()="svg"]//*[name()="path" and contains(@clip-rule,"evenodd")]'
-        )
-        .should('be.visible')
-    )
-    cy.wait(3000)
-    cy.xpath('//span[@class="ismart-2epqce-Icon-container"]//*[name()="svg"]')
-    cy.wait(3000)
+    for (let i = 0; i <= 15; i++) {
+      cy.wait(2000)
+      if (Math.round(Math.random()) === 1) {
+        cy.xpath(
+          '//span[@class="ismart-13jccua-Icon-container"]//*[name()="svg"]'
+        ).click()
+      } else {
+        cy.xpath('//span[@class="ismart-2epqce-Icon-container"]//*[name()="svg"]').click()
+      }
+    }
   })
 })
