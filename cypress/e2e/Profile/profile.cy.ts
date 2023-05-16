@@ -77,14 +77,6 @@ describe('ParentProfile', () => {
       'have.value',
       'ismartTester@yandex.ru'
     )
-    /*
-    Вставить код проверки письма на почте, когда починят майлер
-    1. cy.visit() - ссылка на яндекс почту
-    2. креды аккаунта ismartTester@yandex.ru ag2R2aUBiCzu
-    3. клик на письмо
-    4. проверка отображения логина и новой почты
-    5. Вернуться в профиль
-    */
     // Возвращаем стандартную почту
     cy.xpath('//p[contains(text(),"Почта")]').click()
     cy.xpath('//input[@placeholder="Почта"]').clear().type('parent@ismart.org')
