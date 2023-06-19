@@ -10,9 +10,9 @@ describe('Task from parent to student', () => {
     cy.xpath('//button[contains(text(),"Войти")]').click()
     cy.xpath('//h1[normalize-space()="Test1"]').click()
     cy.xpath('//span[contains(text(),"Кабинет родителя")]').click()
-    cy.xpath('//button[@class="ismart-2ws7c6-Button-container"]').click()
+    cy.xpath('//button[@class="ismart-53a3ev-Button-container"]').click()
     cy.xpath('//span[@class="ismart-1twvswa"]').type(' Test1')
-    cy.xpath('//span[contains(text(),"Математика (Расширенная версия)")]').click()
+    cy.xpath('//h4[contains(text(),"Математика (Расширенная версия)")]').click()
     cy.xpath(
       '//a[contains(text(),"Пространственные представления: наверху - внизу")]'
     ).click()
