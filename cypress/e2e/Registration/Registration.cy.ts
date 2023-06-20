@@ -5,7 +5,7 @@ describe('test registration', () => {
   const userNumber = '+7 (930) 444-44-44'
 
   it('test registration positive', () => {
-    cy.visit('https://canary.ismart.org/auth/register')
+    cy.visit('https://beta.ismart.org/auth/register')
     cy.xpath('//div[@class="ismart-4sxigk-Flexbox-container"]').click()
 
     // cy.get('.ismart-mgi866-Flexbox-container')

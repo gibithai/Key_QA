@@ -1,8 +1,8 @@
 describe('guest diagnostic', () => {
-  it('test diaagnostic', () => {
-    cy.visit('https://canary.ismart.org/diagnostics')
+  it('guest diagnostic', () => {
+    cy.visit(Cypress.env('BASE_URL') + 'diagnostics')
     cy.xpath('//div[@class="ismart-1p15wet-Flexbox-container"]').click()
-    cy.visit('https://canary.ismart.org/diagnostics/create')
+    cy.visit(Cypress.env('BASE_URL') + 'diagnostics/create')
     cy.xpath('//div[@class="ismart-17nvw1w-Block-container"]').click()
     cy.wait(2000)
     cy.xpath(
@@ -21,5 +21,3 @@ describe('guest diagnostic', () => {
     }
   })
 })
-/// /*[name()="svg"]
-/// /*[name()="svg"]
