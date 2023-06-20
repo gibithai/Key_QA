@@ -1,5 +1,5 @@
 describe('Assertions', () => {
-  it('Implicit assertions', () => {
+  it('Assertions', () => {
     cy.visit('https://canary.ismart.org/auth')
     // should and
     // cy.url().should("include", 'https://canary.ismart.org')

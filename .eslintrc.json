@@ -27,6 +27,7 @@
   "ignorePatterns": ["./cypress.config.ts"],
   "rules": {
     "eslint@typescript-eslint/no-unused-expressions": "off",
+    "eslint@typescript-eslint/restrict-template-expressions": "off",
     "cypress/no-async-tests": "off",
     "prettier/prettier": [
       "error",

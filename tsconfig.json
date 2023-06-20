@@ -20,4 +20,5 @@
     "cypress/**/*.tsx"
   ],
   "exclude": ["node_modules"]
+
 }

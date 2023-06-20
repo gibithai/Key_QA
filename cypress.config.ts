@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/space-before-function-paren */
-import { defineConfig } from 'cypress'
 
+import { defineConfig } from 'cypress'
+import 'dotenv/config'
 export default defineConfig({
   fixturesFolder: 'cypress/fixtures',
   videosFolder: 'cypress/videos',
@@ -15,5 +16,6 @@ export default defineConfig({
     setupNodeEvents(on, config) {
       // implement node event listeners here
     }
-  }
+  },
+  env: process.env
 })
