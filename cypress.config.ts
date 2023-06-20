@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/space-before-function-paren */
-
 import { defineConfig } from 'cypress'
 import 'dotenv/config'
 export default defineConfig({
