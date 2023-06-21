@@ -50,7 +50,7 @@ coverage
 src/screenshots/*
 src/videos/*
 
-
+.env
 
 # nyc test coverage
 .nyc_output
