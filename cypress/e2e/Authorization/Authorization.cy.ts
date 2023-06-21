@@ -1,7 +1,6 @@
 describe('AuthorizationISMART', () => {
   it('AuthorizationISMART', () => {
-    cy.viewport(1920, 1080)
-    cy.visit('https://canary.ismart.org/')
+    cy.visit(Cypress.env('BASE_URL'))
     cy.xpath('//div[@class="ismart-1p15wet-Flexbox-container"]').click()
     cy.xpath('//p[contains(text(),"Войти")]').click()
     cy.xpath('//input[@name="login"]').type('Parent@ismart.org')
