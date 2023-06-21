@@ -1,7 +1,7 @@
 describe('Authorization in the student account', () => {
   it('  Authorization in the student account', () => {
     cy.viewport(1920, 1080)
-    cy.visit('https://canary.ismart.org/')
+    cy.visit(Cypress.env('BASE_URL'))
     // После авторизации выбрать профиль ученика
     cy.xpath('//div[@class="ismart-1p15wet-Flexbox-container"]').click()
     cy.xpath('//p[contains(text(),"Войти")]').click()
