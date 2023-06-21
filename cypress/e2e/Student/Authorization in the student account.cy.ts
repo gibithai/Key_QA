@@ -8,7 +8,7 @@ describe('Authorization in the student account', () => {
     cy.xpath('//input[@name="login"]').type('Parent@ismart.org')
     cy.xpath('//input[@name="password"]').type('123456')
     cy.xpath('//button[contains(text(),"Войти")]').click()
-    cy.xpath('//div[@class="ismart-z951zb-Flexbox-container"]//div[2]//div[2]').click()
+    cy.xpath('//h1[contains(text(),"Вася Пуговкин")]').click()
     cy.xpath(
       '//body/div[@id="app"]/div[@class="ismart-r38pru-ScrollView-wrapper"]/div[@class="ismart-1xtyevz-ScrollView-container"]/div[@class="ismart-zz75lc-ScrollView-content"]/div[@class="ismart-4o5ltj-Flexbox-container"]/div[@class="ismart-1xt4q15-Flexbox-container"]/div[@class="ismart-z951zb-Flexbox-container"]/form[@class="ismart-m9p5u1"]/div[@class="ismart-v8c4be-Flexbox-container"]/div[@class="ismart-5gneco-Grid-container"]/div[2]'
     ).click()
