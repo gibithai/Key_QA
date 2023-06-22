@@ -25,6 +25,11 @@ describe('Assertions', () => {
       .and('eq', 'Вход — iSmart')
       .and('contain', 'Вход — iSmart')
 
+    cy.title()
+      .should('include', 'Вход — iSmart')
+      .and('eq', 'Вход — iSmart')
+      .and('contain', 'Вход — iSmart')
+
     // cy.get("ismart-1378iz0-Block-container").should('be.visible')
     // .and('exist')
   })
