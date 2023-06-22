@@ -14,7 +14,7 @@ describe('Authorization in the student account', () => {
     cy.xpath('//p[@class="ismart-1pjcu8j-Paragraph-container"]')
       .invoke('text')
       .should('eq', 'Вася Пуговкин')
-    // Переход в аккаунт родителя
+    // Переход в аккаунт родител
     cy.xpath('//div[@class="ismart-1p15wet-Flexbox-container"]').click()
     cy.xpath('//p[contains(text(),"Родительский аккаунт")]').click()
     cy.xpath('//p[@class="ismart-1pjcu8j-Paragraph-container"]')
