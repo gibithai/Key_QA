@@ -3,6 +3,8 @@ describe('test registration', () => {
   const userPassword = 'Santasan11'
   const userName = 'Mister Key'
   const userNumber = '+7 (930) 444-44-44'
+  const className = 'A'
+  const studentName = 'Mister A'
 
   it('test registration positive', () => {
     cy.visit(Cypress.env('BASE_URL') + 'auth/register')
@@ -36,6 +38,20 @@ describe('test registration', () => {
 
     cy.xpath('//button[contains(text(),"Продолжить")]').click()
 
-    cy.reload()
+    cy.xpath('//div[@class="ismart-1yej63f-Select-selectedArea"]').click()
+    cy.xpath('//div[normalize-space()="4"]').click()
+    cy.xpath('//input[@placeholder="«_»"]')
+      .type(className)
+      .should('have.value', className)
+
+    cy.xpath('//button[contains(text(),"Продолжить")]').click()
+
+    cy.xpath('//textarea[@placeholder="Каждый ученик с новой строки"]')
+      .type(studentName)
+      .should('have.value', studentName)
+
+    cy.xpath('//button[contains(text(),"Продолжить")]').click()
+
+    cy.xpath('//button[contains(text(),"Начать работу")]').click()
   })
 })
