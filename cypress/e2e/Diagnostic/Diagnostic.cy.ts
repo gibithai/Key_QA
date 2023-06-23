@@ -1,8 +1,8 @@
 describe('guest diagnostic', () => {
   it('guest diagnostic', () => {
-    cy.visit(Cypress.env('BASE_URL') + 'diagnostics')
+    cy.visit(String(Cypress.env('BASE_URL')) + 'diagnostics')
     cy.xpath('//div[@class="ismart-1p15wet-Flexbox-container"]').click()
-    cy.visit(Cypress.env('BASE_URL') + 'diagnostics/create')
+    cy.visit(String(Cypress.env('BASE_URL')) + 'diagnostics/create')
     cy.xpath('//div[@class="ismart-17nvw1w-Block-container"]').click()
     cy.wait(2000)
     cy.xpath(
