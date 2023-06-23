@@ -48,6 +48,7 @@ describe('Creating homework', () => {
     cy.xpath(
       '//div[@class="ismart-j3qx0u-ScrollView-content"]//div[1]//div[1]//div[1]//span[1]//*[name()="svg"]'
     ).click()
+    cy.xpath('//span[contains(text(),"1 ученик")]').click()
     cy.xpath('//button[@class="ismart-16zkzwl-Button-container"]').click()
     cy.contains('1 ученик').should('be.visible')
     cy.contains(currentDate).should('exist')
