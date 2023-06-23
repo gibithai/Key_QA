@@ -41,7 +41,7 @@ describe('Creating homework', () => {
       '//div[@class="ismart-wq0rxi-Flexbox-container"]//div[2]//div[2]//div[1]//div[1]//div[1]//div[1]//div[1]//input[1]'
     ).click()
     cy.xpath('//button[contains(text(),"Сегодня")]').should('be.disabled')
-    cy.xpath('//span[contains(text(),"16 учеников")]').click()
+    cy.xpath('//span[contains(text(),"17 учеников")]').click()
     cy.xpath(
       '//div[@class="ismart-1yrf1jo-Flexbox-container"]//span[@class="ismart-w1blmz-Icon-container-Checkbox-icon"]//*[name()="svg"]'
     ).click()
