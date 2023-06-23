@@ -3,7 +3,7 @@ describe('shop test', () => {
   const CardHoder = 'Mister Key'
   const exrDate = '01/29'
   const cvv = '111'
-  it('test registration positive', () => {
+  it('shop test', () => {
     cy.visit('https://canary.ismart.org')
     cy.viewport(1920, 1080)
     cy.xpath('//div[@class="ismart-1p15wet-Flexbox-container"]').click()
@@ -19,10 +19,14 @@ describe('shop test', () => {
     ).click()
     cy.xpath('//p[contains(text(),"Русский язык")]').click()
     cy.xpath(
-      '//body[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[2]/div[2]/div[1]/div[1]/div[3]/button[2]'
+      '//div[@class="ismart-klwhgf-Block-container"]//div[2]//div[1]//div[2]//div[3]//button[2]'
     ).click()
     cy.xpath(
-      '//body[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[2]/div[2]/div[1]/div[2]/div[3]/button[2]'
+      '//div[@class="ismart-4g250r-Flexbox-container"]//div[3]//div[1]//div[1]//div[3]//button[2]'
     ).click()
+    cy.xpath(
+      '//span[@class="ismart-3nfsk1-Icon-container"]//*[name()="svg"]//*[name()="path" and contains(@clip-rule,"evenodd")]'
+    ).click()
+    cy.xpath('//button[@class="ismart-1kxq8zk-Button-container"]').click()
   })
 })
