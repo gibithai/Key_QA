@@ -4,7 +4,7 @@ describe('shop test', () => {
   const exrDate = '01/29'
   const cvv = '111'
   it('shop test', () => {
-    cy.visit('https://canary.ismart.org')
+    cy.visit(String(Cypress.env('BASE_URL')))
     cy.viewport(1920, 1080)
     cy.xpath('//div[@class="ismart-1p15wet-Flexbox-container"]').click()
     cy.xpath('//p[contains(text(),"Войти")]').click()
@@ -12,7 +12,7 @@ describe('shop test', () => {
     cy.xpath('//input[@name="password"]').type('123456')
     cy.xpath('//button[contains(text(),"Войти")]').click()
     cy.xpath('//div[@class="ismart-mj4ckr-Flexbox-container"]').click()
-    cy.visit('https://canary.ismart.org/shop')
+    cy.visit(String(Cypress.env('BASE_URL')) + 'shop')
     cy.wait(1000)
     cy.xpath(
       '//div[@class="ismart-milwcx-Block-container"]//div[1]//div[1]//div[1]//span[1]//*[name()="svg"]'
