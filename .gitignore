@@ -304,3 +304,4 @@ $RECYCLE.BIN/
 packages/graphql/src/shared/graphql/imports.ts
 packages/graphql/src/orm/tsconfig.json
 packages/graphql/src/imports.ts
+cypress/e2e/Shop/buy_in_shop.cy.ts
