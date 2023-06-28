@@ -28,6 +28,10 @@ describe('shop test', () => {
       '//span[@class="ismart-3nfsk1-Icon-container"]//*[name()="svg"]//*[name()="path" and contains(@clip-rule,"evenodd")]'
     ).click()
     cy.xpath('//button[@class="ismart-1kxq8zk-Button-container"]').click()
-    cy.xpath('//div[@class="ismart-1935w9c-Modal-window"]//iframe')
+    cy.get('iframe')
+      .eq(2)
+      .then(($iframe) => {
+        const $body = $iframe.contents().find('body')
+      })
   })
 })
