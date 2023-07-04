@@ -36,8 +36,10 @@ describe('shop test', () => {
         cy.get('form').focus()
         const body = iframe.contents().find('body')
         const cvc = body.find('[automation-id="tui-input-card-grouped__cvc"]')
-        cvc.val('232')
-        cy.wrap('iframe')
+        cy.wrap(cvc).focus().type('123')
+
+        // cvc.val('232').trigger('input')
+        // cy.wrap('iframe')
       })
     // cy.get('[automation-id="tui-input-card-grouped__cvc"]').eq(0).click().type('789') НЕ видит!!! Искать этот элемент
 
