@@ -1,13 +1,8 @@
 describe('shop test', () => {
-  const creditCardNumber = '4300000000000777'
-  const CardHoder = 'Mister Key'
-  const exrDate = '01/29'
-  const cvv = '111'
   it('shop test', () => {
     cy.visit(String(Cypress.env('BASE_URL')))
     cy.viewport(1920, 1080)
     cy.xpath('//div[@class="ismart-i3f51a-Flexbox-container"]').click()
-    // cy.xpath('//div[@class="ismart-1p15wet-Flexbox-container"]').click()
     cy.xpath('//p[contains(text(),"Войти")]').click()
     cy.xpath('//input[@name="login"]').type('dougcarlin@tut.by')
     cy.xpath('//input[@name="password"]').type('123456')
@@ -33,37 +28,12 @@ describe('shop test', () => {
     cy.get('iframe')
       .eq(0)
       .then((iframe) => {
-        cy.get('form').focus()
         const body = iframe.contents().find('body')
         const cvc = body.find('[automation-id="tui-input-card-grouped__cvc"]')
         cy.wrap(cvc).focus().type('123')
-
-        // cvc.val('232').trigger('input')
-        // cy.wrap('iframe')
+        cy.wait(2000)
+        const payButton = body.find('[automation-id="card-form__submit"]')
+        cy.wrap(payButton).click()
       })
-    // cy.get('[automation-id="tui-input-card-grouped__cvc"]').eq(0).click().type('789') НЕ видит!!! Искать этот элемент
-
-    // const el = paycheck.find('[automation-id="tui-input-card-grouped__cvc"]') // .eq(0).click().type('789')
-    // console.log(el)
-    // .get('[automation-id="tui-input-card-grouped__cvc"]')
-    // .eq(0)
-    //
-    // alert('Hello Eugene!')
-    // const body = iframe.contents().find('body')
-    // const cvc = body.find('[automation-id="tui-input-card-grouped__cvc"]')
-    // //
-    // body.within(() => {
-    //   alert('Yo!')
-    // })
-    // const button = body.find('[automation-id="card-form__submit"]')
-    // button.click()
-    // cvc.dispatchEvent(new KeyboardEvent('keydown', { key: '4' }))
-    // cvc.trigger($.Event('keydown', { keyCode: '4' }))
-    // cvc.trigger(jQuery.Event('keydown', { keyCode: '4' }))
-    // window.addEventListener('touchstart', {})
-    // cy.get('iframe')
-    // cy.xpath('//div[@class="ismart-1935w9c-Modal-window"]').click()
-    // })
-    // cy.xpath('//iframe//input[@automation-id="tui-input-card-grouped__cvc"]').type('789')
   })
 })
