@@ -7,7 +7,11 @@ describe('test registration', () => {
   const studentName = 'Mister A'
 
   it('test registration positive', () => {
+<<<<<<< HEAD
     cy.visit(Cypress.env('BASE_URL') + 'auth/register')
+=======
+    cy.visit(String(Cypress.env('BASE_URL')) + 'auth/register')
+>>>>>>> other
     cy.xpath('//div[@class="ismart-4sxigk-Flexbox-container"]').click()
 
     // cy.get('.ismart-mgi866-Flexbox-container')

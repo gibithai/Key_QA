@@ -12,7 +12,14 @@ describe('Authorization in the student account', () => {
     cy.xpath(
       '//body/div[@id="app"]/div[@class="ismart-r38pru-ScrollView-wrapper"]/div[@class="ismart-1xtyevz-ScrollView-container"]/div[@class="ismart-zz75lc-ScrollView-content"]/div[@class="ismart-4o5ltj-Flexbox-container"]/div[@class="ismart-1xt4q15-Flexbox-container"]/div[@class="ismart-z951zb-Flexbox-container"]/form[@class="ismart-m9p5u1"]/div[@class="ismart-v8c4be-Flexbox-container"]/div[@class="ismart-5gneco-Grid-container"]/div[2]'
     ).click()
+<<<<<<< HEAD:cypress/e2e/Student/Authorization in the student account.cy.ts
     // Переход в аккаунт родителя
+=======
+    cy.xpath('//p[@class="ismart-1pjcu8j-Paragraph-container"]')
+      .invoke('text')
+      .should('eq', 'Вася Пуговкин')
+    // Переход в аккаунт родител
+>>>>>>> other:cypress/e2e/Student/Student_auth.cy.ts
     cy.xpath('//div[@class="ismart-1p15wet-Flexbox-container"]').click()
     cy.xpath('//p[contains(text(),"Родительский аккаунт")]').click()
     cy.xpath('//p[@class="ismart-1pjcu8j-Paragraph-container"]')
