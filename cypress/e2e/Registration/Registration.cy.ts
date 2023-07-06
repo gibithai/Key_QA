@@ -7,16 +7,14 @@ describe('test registration', () => {
   const studentName = 'Mister A'
 
   it('test registration positive', () => {
-<<<<<<< HEAD
-    cy.visit(Cypress.env('BASE_URL') + 'auth/register')
-=======
     cy.visit(String(Cypress.env('BASE_URL')) + 'auth/register')
->>>>>>> other
     cy.xpath('//div[@class="ismart-4sxigk-Flexbox-container"]').click()
+
+    // генерится рандомный мэйл дял атворизации
 
     // cy.get('.ismart-mgi866-Flexbox-container')
     // .should('contain', 'Регистрация')
-    // доп проверка что это форма регистрации
+    // необязательная доп проверка что это форма регистрации
 
     cy.xpath('//input[@placeholder="Ваша электронная почта"]')
       .type(userEmail)
@@ -47,15 +45,16 @@ describe('test registration', () => {
     cy.xpath('//input[@placeholder="«_»"]')
       .type(className)
       .should('have.value', className)
-
+    // здесь подставляется класс
     cy.xpath('//button[contains(text(),"Продолжить")]').click()
 
     cy.xpath('//textarea[@placeholder="Каждый ученик с новой строки"]')
       .type(studentName)
       .should('have.value', studentName)
-
+    // здесь подставляется имя студента
     cy.xpath('//button[contains(text(),"Продолжить")]').click()
 
     cy.xpath('//button[contains(text(),"Начать работу")]').click()
+    // окончание теста, пользователь зарегистрирован в системе
   })
 })
