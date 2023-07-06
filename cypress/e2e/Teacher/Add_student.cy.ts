@@ -2,7 +2,7 @@ describe('Add student', () => {
   const userEmail = 'mareseva1974@yandex.ru'
   const userPassword = '123456'
   const studentName = 'Тестовый студент'
-
+  // Добавление нового ученика
   it('Add student', () => {
     cy.viewport(1920, 1080)
     cy.visit(String(Cypress.env('BASE_URL')) + 'auth')
