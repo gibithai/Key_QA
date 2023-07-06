@@ -20,7 +20,7 @@ describe('guest diagnostic', () => {
         cy.get('#dev-menu__button_right').click()
       } else {
         cy.get('#dev-menu__button_wrong').click()
-        // Функция, которая рандомно генерит верные и неверные ответы
+        // Функция, которая рандомно генерит правильные и неверные ответы
       }
     }
   })
