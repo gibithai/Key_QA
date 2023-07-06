@@ -14,7 +14,7 @@ describe('Edit student', () => {
     cy.xpath(
       '//div[@class="ismart-aniv23-Flexbox-container"]//div[3]//div[1]//button[1]//span[1]//*[name()="svg"]'
     ).click()
-    // Редактируем имя и фамилию
+    // Редактируем имя и Фамилию
     cy.xpath('//p[contains(text(),"Редактировать")]').click()
     cy.xpath('//input[@placeholder="Фамилия и Имя"]').clear().type(newStudentName)
     cy.xpath('//span[@class="ismart-1wt7gtz-Icon-container"]//*[name()="svg"]').click()
