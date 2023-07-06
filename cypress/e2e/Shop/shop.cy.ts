@@ -38,7 +38,7 @@ describe('shop test', () => {
         cy.wait(2000)
         const payButton = body.find('[automation-id="card-form__submit"]')
         cy.wrap(payButton).click()
-        // Заполнение карточной формы (данные дебитовой карты и клик на оплату)
+        // Заполнение карточной формы (данные по карте и клик на оплату)
       })
   })
 })
