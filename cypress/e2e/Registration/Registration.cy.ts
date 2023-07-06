@@ -55,6 +55,6 @@ describe('test registration', () => {
     cy.xpath('//button[contains(text(),"Продолжить")]').click()
 
     cy.xpath('//button[contains(text(),"Начать работу")]').click()
-    // окончание теста, пользователь зарегистрирован в системе
+    // окончание теста. Пользователь зарегистрирован в системе
   })
 })
