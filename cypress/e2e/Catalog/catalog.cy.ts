@@ -6,4 +6,4 @@ describe('catalog functionallity', () => {
     cy.xpath('//div[@class="ismart-wmfrhu-Flexbox-container"]').click()
   })
 })
-// Тесты по выборке предметов в каталоге, базовая проверка
+// Тесты по выборке предметов в каталоге, базовая проверка каталога
