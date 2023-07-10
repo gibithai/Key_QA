@@ -7,7 +7,7 @@ describe('shop test', () => {
     cy.xpath('//input[@name="login"]').type('dougcarlin@tut.by')
     cy.xpath('//input[@name="password"]').type('123456')
     cy.xpath('//button[contains(text(),"Войти")]').click()
-    // Авторизация в аккаунт с нужными кредеами
+    // Авторизация в аккаунт с нужными кредами
     cy.xpath('//div[@class="ismart-mj4ckr-Flexbox-container"]').click()
     cy.visit(String(Cypress.env('BASE_URL')) + 'shop')
     cy.wait(1000)
