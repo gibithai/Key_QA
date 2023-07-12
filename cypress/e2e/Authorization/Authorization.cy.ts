@@ -3,11 +3,11 @@ describe('AuthorizationISMART', () => {
   const parentEmail = 'parent@ismart.org'
   const parentPassword = '123456'
   const negParentEmail = 'parentismart.org'
-  const negParrentPassword = '124567'
+  const negParentPassword = '124567'
   const negParentEmailP = 'Parent@ismart.org'
 
   // Teacher
-  const teachertEmail = 'teacher@ismart.org'
+  const teacherEmail = 'teacher@ismart.org'
   const teacherPassword = '123456'
   const negTeacherEmail = 'Teacherismart.org'
   const negTeacherPassword = '124567'
@@ -32,6 +32,16 @@ describe('AuthorizationISMART', () => {
     cy.xpath('//button[contains(text(),"Войти")]').click()
     cy.xpath('//div[@class="ismart-mj4ckr-Flexbox-container"]').click()
     cy.contains('Test1').should('be.visible')
+    cy.xpath('//p[@class="ismart-1pjcu8j-Paragraph-container"]').click()
+    cy.xpath('//p[contains(text(),"Выйти")]').click()
+    cy.xpath('//div[@class="ismart-5mymc9-Flexbox-container"]').click()
+    cy.xpath('//p[contains(text(),"Войти")]').click()
+    cy.xpath('//input[@name="login"]').type(negParentEmailP)
+    cy.xpath('//input[@name="password"]').type(parentPassword)
+    cy.xpath('//button[contains(text(),"Войти")]').click()
+    cy.xpath('//div[@class="ismart-mj4ckr-Flexbox-container"]').click()
+    cy.contains('Test1').should('be.visible')
+
     // Ученик
     cy.xpath('//p[@class="ismart-1pjcu8j-Paragraph-container"]').click()
     cy.xpath('//p[contains(text(),"Выйти")]').click()
@@ -52,26 +62,38 @@ describe('AuthorizationISMART', () => {
     cy.xpath('//input[@name="password"]').type(parentPassword)
     cy.xpath('//button[contains(text(),"Войти")]').click()
     cy.contains('Неверный логин или пароль').should('be.visible')
-    cy.xpath('//input[@name="login"]').clear().type(negParentEmailP)
-    cy.xpath('//input[@name="password"]').type(parentPassword)
-    cy.xpath('//button[contains(text(),"Войти")]').click()
-    cy.contains('Неверный логин или пароль').should('be.visible')
 
     // Негативный кейс parent password
     cy.xpath('//input[@name="login"]').clear().type(parentEmail)
-    cy.xpath('//input[@name="password"]').clear().type(negParrentPassword)
+    cy.xpath('//input[@name="password"]').clear().type(negParentPassword)
+    cy.xpath('//button[contains(text(),"Войти")]').click()
+    cy.contains('Неверный логин или пароль').should('be.visible')
+
+    // Негативный кейс parent неверный логин и пароль
+    cy.xpath('//input[@name="login"]').clear().type(negParentEmail)
+    cy.xpath('//input[@name="password"]').clear().type(negParentPassword)
     cy.xpath('//button[contains(text(),"Войти")]').click()
     cy.contains('Неверный логин или пароль').should('be.visible')
 
     // Teacher
 
     // Позитивный
-    cy.xpath('//input[@name="login"]').clear().type(teachertEmail)
+    cy.xpath('//input[@name="login"]').clear().type(teacherEmail)
     cy.xpath('//input[@name="password"]').clear().type(teacherPassword)
     cy.xpath('//button[contains(text(),"Войти")]').click()
     cy.xpath('//p[@class="ismart-1pjcu8j-Paragraph-container"]').click()
     cy.xpath('//p[contains(text(),"Выйти")]').click()
     cy.wait(3000)
+    cy.xpath('//div[@class="ismart-5mymc9-Flexbox-container"]').click()
+    cy.xpath('//p[contains(text(),"Войти")]').click()
+    cy.xpath('//input[@name="login"]').type(negTeacherEmailP)
+    cy.xpath('//input[@name="password"]').type(teacherPassword)
+    cy.xpath('//button[contains(text(),"Войти")]').click()
+    cy.contains('Учитель').should('be.visible')
+    cy.xpath('//p[@class="ismart-1pjcu8j-Paragraph-container"]').click()
+    cy.xpath('//p[contains(text(),"Выйти")]').click()
+    cy.wait(3000)
+
     // Негативный кейс teacher email
     cy.xpath('//p[@class="ismart-1pjcu8j-Paragraph-container"]').click()
     cy.xpath('//p[contains(text(),"Войти")]').click()
@@ -79,11 +101,18 @@ describe('AuthorizationISMART', () => {
     cy.xpath('//input[@name="password"]').type(teacherPassword)
     cy.xpath('//button[contains(text(),"Войти")]').click()
     cy.contains('Неверный логин или пароль').should('be.visible')
-    cy.xpath('//input[@name="login"]').clear().type(negTeacherEmailP)
-    cy.xpath('//input[@name="password"]').type(teacherPassword)
+
+    // Негативный кейс teacher password
+    cy.xpath('//input[@name="login"]').clear().type(teacherEmail)
+    cy.xpath('//input[@name="password"]').clear().type(negTeacherPassword)
     cy.xpath('//button[contains(text(),"Войти")]').click()
     cy.contains('Неверный логин или пароль').should('be.visible')
-  
+
+    // Негативный кейс teacher неверный логин и пароль
+    cy.xpath('//input[@name="login"]').clear().type(negTeacherEmail)
+    cy.xpath('//input[@name="password"]').clear().type(negTeacherPassword)
+    cy.xpath('//button[contains(text(),"Войти")]').click()
+    cy.contains('Неверный логин или пароль').should('be.visible')
 
     // Admin
 
@@ -93,13 +122,23 @@ describe('AuthorizationISMART', () => {
     cy.xpath('//button[contains(text(),"Войти")]').click()
     cy.xpath('//p[@class="ismart-1pjcu8j-Paragraph-container"]').click()
     cy.xpath('//p[contains(text(),"Выйти")]').click()
+    cy.xpath('//div[@class="ismart-5mymc9-Flexbox-container"]').click()
+    cy.xpath('//p[contains(text(),"Войти")]').click()
+    cy.xpath('//input[@name="login"]').type(negAdminEmailP)
+    cy.xpath('//input[@name="password"]').type(adminPassword)
+    cy.xpath('//button[contains(text(),"Войти")]').click()
+    cy.contains('Администратор').should('be.visible')
+
     // Негативный кейс admin email
+    cy.xpath('//p[@class="ismart-1pjcu8j-Paragraph-container"]').click()
+    cy.xpath('//p[contains(text(),"Выйти")]').click()
     cy.xpath('//p[@class="ismart-1pjcu8j-Paragraph-container"]').click()
     cy.xpath('//p[contains(text(),"Войти")]').click()
     cy.xpath('//input[@name="login"]').type(negAdminEmail)
     cy.xpath('//input[@name="password"]').type(adminPassword)
     cy.xpath('//button[contains(text(),"Войти")]').click()
     cy.contains('Неверный логин или пароль').should('be.visible')
+
     // Негативный кейс admin password
     cy.xpath('//input[@name="login"]').clear().type(adminEmail)
     cy.xpath('//input[@name="password"]').clear().type(negAdminPassword)
@@ -111,6 +150,12 @@ describe('AuthorizationISMART', () => {
     cy.contains('Неверный логин или пароль').should('be.visible')
     cy.xpath('//input[@name="login"]').clear().type(negAdminEmailP)
     cy.xpath('//input[@name="password"]').type(adminPassword)
+    cy.xpath('//button[contains(text(),"Войти")]').click()
+    cy.contains('Неверный логин или пароль').should('be.visible')
+
+    // Негативный кейс admin неверный логин и пароль
+    cy.xpath('//input[@name="login"]').clear().type(negAdminEmail)
+    cy.xpath('//input[@name="password"]').clear().type(negAdminPassword)
     cy.xpath('//button[contains(text(),"Войти")]').click()
     cy.contains('Неверный логин или пароль').should('be.visible')
   })
