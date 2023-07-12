@@ -29,6 +29,7 @@ describe('AuthorizationISMART', () => {
     cy.xpath('//button[contains(text(),"Войти")]').click()
     cy.xpath('//div[@class="ismart-mj4ckr-Flexbox-container"]').click()
     cy.contains('Test1').should('be.visible')
+<<<<<<< HEAD
 
     // Негативный кейс parent email
     cy.xpath('//p[@class="ismart-1pjcu8j-Paragraph-container"]').click()
@@ -88,5 +89,9 @@ describe('AuthorizationISMART', () => {
     cy.xpath('//input[@name="password"]').clear().type(negAdminPassword)
     cy.xpath('//button[contains(text(),"Войти")]').click()
     cy.contains('Неверный логин или пароль').should('be.visible')
+=======
+    cy.xpath('//div[@class="ismart-1p15wet-Flexbox-container"]').click()
+    cy.xpath('//p[contains(text(),"Выйти")]').contains('Выйти').click()
+>>>>>>> 8b59296123f2c7078ea3e077e621871c26447f99
   })
 })
