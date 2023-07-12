@@ -1,14 +1,17 @@
 describe('AuthorizationISMART', () => {
+  // Parent
   const parentEmail = 'parent@ismart.org'
   const parentPassword = '123456'
   const negParentEmail = 'parentismart.org'
   const negParrentPassword = '124567'
 
+  // Teacher
   const teachertEmail = 'teacher@ismart.org'
   const teacherPassword = '123456'
   const negTeacherEmail = 'Teacherismart.org'
   const negTeacherPassword = '124567'
 
+  // Admin
   const admintEmail = 'admin@ismart.org'
   const adminPassword = '123456'
   const negAdminEmail = 'adminismart.org'
