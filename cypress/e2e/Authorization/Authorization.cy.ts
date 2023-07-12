@@ -29,7 +29,17 @@ describe('AuthorizationISMART', () => {
     cy.xpath('//button[contains(text(),"Войти")]').click()
     cy.xpath('//div[@class="ismart-mj4ckr-Flexbox-container"]').click()
     cy.contains('Test1').should('be.visible')
-
+    // Ученик
+    cy.xpath('//p[@class="ismart-1pjcu8j-Paragraph-container"]').click()
+    cy.xpath('//p[contains(text(),"Выйти")]').click()
+    cy.xpath('//div[@class="ismart-5mymc9-Flexbox-container"]').click()
+    cy.xpath('//p[contains(text(),"Войти")]').click()
+    cy.xpath('//input[@name="login"]').type(parentEmail)
+    cy.xpath('//input[@name="password"]').type(parentPassword)
+    cy.xpath('//button[contains(text(),"Войти")]').click()
+    cy.xpath('//h1[contains(text(),"Вася Пуговкин")]').click()
+    cy.contains('Вася Пуговкин').should('be.visible')
+    
     // Негативный кейс parent email
     cy.xpath('//p[@class="ismart-1pjcu8j-Paragraph-container"]').click()
     cy.xpath('//p[contains(text(),"Выйти")]').click()
@@ -53,7 +63,7 @@ describe('AuthorizationISMART', () => {
     cy.xpath('//button[contains(text(),"Войти")]').click()
     cy.xpath('//p[@class="ismart-1pjcu8j-Paragraph-container"]').click()
     cy.xpath('//p[contains(text(),"Выйти")]').click()
-    cy.wait(5000)
+    cy.wait(3000)
     // Негативный кейс teacher email
     cy.xpath('//p[@class="ismart-1pjcu8j-Paragraph-container"]').click()
     cy.xpath('//p[contains(text(),"Войти")]').click()
@@ -75,7 +85,6 @@ describe('AuthorizationISMART', () => {
     cy.xpath('//button[contains(text(),"Войти")]').click()
     cy.xpath('//p[@class="ismart-1pjcu8j-Paragraph-container"]').click()
     cy.xpath('//p[contains(text(),"Выйти")]').click()
-    cy.wait(5000)
     // Негативный кейс admin email
     cy.xpath('//p[@class="ismart-1pjcu8j-Paragraph-container"]').click()
     cy.xpath('//p[contains(text(),"Войти")]').click()
