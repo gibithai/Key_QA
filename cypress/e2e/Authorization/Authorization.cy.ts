@@ -4,21 +4,21 @@ describe('AuthorizationISMART', () => {
   const parentPassword = '123456'
   const negParentEmail = 'parentismart.org'
   const negParentPassword = '124567'
-  const negParentEmailP = 'Parent@ismart.org'
+  const negParentEmailP = 'Parent@ismart.org' // для тестирования верхнего регистра
 
   // Teacher
   const teacherEmail = 'teacher@ismart.org'
   const teacherPassword = '123456'
   const negTeacherEmail = 'Teacherismart.org'
   const negTeacherPassword = '124567'
-  const negTeacherEmailP = 'Teacher@ismart.org'
+  const negTeacherEmailP = 'Teacher@ismart.org' // для тестирования верхнего регистра
 
   // Admin
   const adminEmail = 'admin@ismart.org'
   const adminPassword = '123456'
   const negAdminEmail = 'adminismart.org'
   const negAdminPassword = '124567'
-  const negAdminEmailP = 'Admin@ismart.org'
+  const negAdminEmailP = 'Admin@ismart.org' // для тестирования верхнего регистра
 
   it('AuthorizationISMART', () => {
     // Parent
