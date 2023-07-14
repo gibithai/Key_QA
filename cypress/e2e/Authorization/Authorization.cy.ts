@@ -25,7 +25,7 @@ describe('AuthorizationISMART', () => {
 
     // Позитивный
     cy.visit(Cypress.env('BASE_URL'))
-    cy.xpath('//div[@class="ismart-5mymc9-Flexbox-container"]').click()
+    cy.xpath('//div[@class="ismart-1p15wet-Flexbox-container"]').click()
     cy.xpath('//p[contains(text(),"Войти")]').click()
     cy.xpath('//input[@name="login"]').type(parentEmail)
     cy.xpath('//input[@name="password"]').type(parentPassword)
@@ -34,7 +34,7 @@ describe('AuthorizationISMART', () => {
     cy.contains('Test1').should('be.visible')
     cy.xpath('//p[@class="ismart-1pjcu8j-Paragraph-container"]').click()
     cy.xpath('//p[contains(text(),"Выйти")]').click()
-    cy.xpath('//div[@class="ismart-5mymc9-Flexbox-container"]').click()
+    cy.xpath('//div[@class="ismart-1p15wet-Flexbox-container"]').click()
     cy.xpath('//p[contains(text(),"Войти")]').click()
     cy.xpath('//input[@name="login"]').type(negParentEmailP)
     cy.xpath('//input[@name="password"]').type(parentPassword)
@@ -45,7 +45,7 @@ describe('AuthorizationISMART', () => {
     // Ученик
     cy.xpath('//p[@class="ismart-1pjcu8j-Paragraph-container"]').click()
     cy.xpath('//p[contains(text(),"Выйти")]').click()
-    cy.xpath('//div[@class="ismart-5mymc9-Flexbox-container"]').click()
+    cy.xpath('//div[@class="ismart-1p15wet-Flexbox-container"]').click()
     cy.xpath('//p[contains(text(),"Войти")]').click()
     cy.xpath('//input[@name="login"]').type(parentEmail)
     cy.xpath('//input[@name="password"]').type(parentPassword)
@@ -83,8 +83,8 @@ describe('AuthorizationISMART', () => {
     cy.xpath('//button[contains(text(),"Войти")]').click()
     cy.xpath('//p[@class="ismart-1pjcu8j-Paragraph-container"]').click()
     cy.xpath('//p[contains(text(),"Выйти")]').click()
-    cy.wait(3000) // Из-за ошибки вынужденный wait
-    cy.xpath('//div[@class="ismart-5mymc9-Flexbox-container"]').click()
+    cy.wait(3000 as number)
+    cy.xpath('//div[@class="ismart-1p15wet-Flexbox-container"]').click()
     cy.xpath('//p[contains(text(),"Войти")]').click()
     cy.xpath('//input[@name="login"]').type(negTeacherEmailP)
     cy.xpath('//input[@name="password"]').type(teacherPassword)
@@ -92,7 +92,7 @@ describe('AuthorizationISMART', () => {
     cy.contains('Учитель').should('be.visible')
     cy.xpath('//p[@class="ismart-1pjcu8j-Paragraph-container"]').click()
     cy.xpath('//p[contains(text(),"Выйти")]').click()
-    cy.wait(3000) // Из-за ошибки вынужденный wait
+    cy.wait(3000 as number)
 
     // Негативный кейс teacher email
     cy.xpath('//p[@class="ismart-1pjcu8j-Paragraph-container"]').click()
@@ -122,7 +122,7 @@ describe('AuthorizationISMART', () => {
     cy.xpath('//button[contains(text(),"Войти")]').click()
     cy.xpath('//p[@class="ismart-1pjcu8j-Paragraph-container"]').click()
     cy.xpath('//p[contains(text(),"Выйти")]').click()
-    cy.xpath('//div[@class="ismart-5mymc9-Flexbox-container"]').click()
+    cy.xpath('//div[@class="ismart-1p15wet-Flexbox-container"]').click()
     cy.xpath('//p[contains(text(),"Войти")]').click()
     cy.xpath('//input[@name="login"]').type(negAdminEmailP)
     cy.xpath('//input[@name="password"]').type(adminPassword)
