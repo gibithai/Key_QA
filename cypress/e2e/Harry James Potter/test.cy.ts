@@ -212,14 +212,9 @@ const questions = [
   }
 ]
 Cypress.Commands.add('determineFaculty', (answers) => {
-  const questionAnswers = [
-    { id: 0, points: [0, 0, 0, 0] },
-    { id: 1, points: [1, 0, 0, 0] },
-    { id: 2, points: [0, 1, 0, 0] },
-    { id: 3, points: [0, 0, 1, 0] },
-    { id: 4, points: [0, 0, 0, 1] }
-    // Add other questions and answers as needed
-  ]
+  const questionAnswers = questions.flatMap((q) => q.answers)
+  // Add other questions and answers as needed
+
   const result = answers.reduce(
     (pv, cv) => {
       const answer = questionAnswers.find((qa) => qa.id === cv)
@@ -255,11 +250,6 @@ describe('Faculty Determination', () => {
     for (let i = 0; i < studentCount; i++) {
       const studentAnswers = []
 
-      // Generate 5 random answers for each student
-      for (let j = 0; j < 5; j++) {
-        const randomFacultyIndex = Cypress._.random(faculties.length - 1)
-        studentAnswers.push(randomFacultyIndex)
-      }
       // Generate 5 random answers for each student
       for (let j = 0; j < 5; j++) {
         const randomQuestionIndex = Cypress._.random(questions.length - 1)
