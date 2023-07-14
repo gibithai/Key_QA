@@ -83,7 +83,7 @@ describe('AuthorizationISMART', () => {
     cy.xpath('//button[contains(text(),"Войти")]').click()
     cy.xpath('//p[@class="ismart-1pjcu8j-Paragraph-container"]').click()
     cy.xpath('//p[contains(text(),"Выйти")]').click()
-    cy.wait(3000)
+    cy.wait(3000) // Из-за ошибки вынужденный wait
     cy.xpath('//div[@class="ismart-5mymc9-Flexbox-container"]').click()
     cy.xpath('//p[contains(text(),"Войти")]').click()
     cy.xpath('//input[@name="login"]').type(negTeacherEmailP)
@@ -92,7 +92,7 @@ describe('AuthorizationISMART', () => {
     cy.contains('Учитель').should('be.visible')
     cy.xpath('//p[@class="ismart-1pjcu8j-Paragraph-container"]').click()
     cy.xpath('//p[contains(text(),"Выйти")]').click()
-    cy.wait(3000)
+    cy.wait(3000) // Из-за ошибки вынужденный wait
 
     // Негативный кейс teacher email
     cy.xpath('//p[@class="ismart-1pjcu8j-Paragraph-container"]').click()
