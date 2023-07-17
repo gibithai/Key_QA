@@ -26,7 +26,13 @@ describe('shop test', () => {
     cy.xpath('//div[4]//div[1]//div[2]//div[3]//button[2]').click()
     cy.xpath('//span[@class="ismart-3nfsk1-Icon-container"]//*[name()="svg"]').click()
 
-    // Проверка выбранных позиций в корзине Полная нЯЯЯЯЯЯЯ!!!!!!!!!!!!!!
+    // Проверка выбранных позиций в корзине
+    cy.xpath('//div[@class="ismart-1ur7znn-Modal-wrapper"]').should('have.length', 1)
+    cy.contains('Математика ОГЭ').should('be.visible')
+    cy.contains('Русский язык ОГЭ').should('be.visible')
+    cy.contains('Контрольные по математики').should('be.visible')
+
+    // Проверка выбранных позиций в корзине
     cy.xpath('//div[@class="ismart-1ur7znn-Modal-wrapper"]').should('have.length', 1)
     cy.contains('Математика ОГЭ').should('be.visible')
     cy.contains('Русский язык ОГЭ').should('be.visible')
