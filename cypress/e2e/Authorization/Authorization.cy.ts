@@ -122,11 +122,8 @@ describe('AuthorizationISMART', () => {
     cy.xpath('//button[contains(text(),"Войти")]').click()
     cy.xpath('//p[@class="ismart-1pjcu8j-Paragraph-container"]').click()
     cy.xpath('//p[contains(text(),"Выйти")]').click()
-<<<<<<< HEAD
     cy.xpath('//div[@class="ismart-5mymc9-Flexbox-container"]').click()
-=======
     cy.xpath('//div[@class="ismart-1p15wet-Flexbox-container"]').click()
->>>>>>> other
     cy.xpath('//p[contains(text(),"Войти")]').click()
     cy.xpath('//input[@name="login"]').type(negAdminEmailP)
     cy.xpath('//input[@name="password"]').type(adminPassword)
