@@ -1,5 +1,3 @@
-import { contains } from 'cypress/types/jquery'
-
 describe('shop test', () => {
   it('shop test', () => {
     // Авторизация в аккаунт с нужными кредами
