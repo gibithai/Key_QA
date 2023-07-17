@@ -8,7 +8,7 @@ describe('shop test', () => {
     cy.xpath('//button[contains(text(),"Войти")]').click()
     cy.xpath('//div[@class="ismart-mj4ckr-Flexbox-container"]').click()
     cy.visit(String(Cypress.env('BASE_URL')) + 'shop')
-    cy.wait(1000 as number)
+    cy.wait(2000 as number)
     cy.xpath(
       '//div[@class="ismart-milwcx-Block-container"]//div[1]//div[1]//div[1]//span[1]//*[name()="svg"]'
     ).click()
