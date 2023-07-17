@@ -1,3 +1,5 @@
+import { contains } from 'cypress/types/jquery'
+
 describe('shop test', () => {
   it('shop test', () => {
     // Авторизация в аккаунт с нужными кредами
@@ -16,18 +18,17 @@ describe('shop test', () => {
       '//div[@class="ismart-milwcx-Block-container"]//div[1]//div[1]//div[1]//span[1]//*[name()="svg"]'
     ).click()
     cy.xpath('//p[contains(text(),"Русский язык")]').click()
-    cy.xpath(
-      '//div[@class="ismart-klwhgf-Block-container"]//div[2]//div[1]//div[2]//div[3]//button[2]'
-    ).click()
-    // Переход в корзину с товарами
+    // Выбор предметов, нажатие кнопки "в корзину", переход в корзину
     cy.xpath(
       '//div[@class="ismart-klwhgf-Block-container"]//div[2]//div[1]//div[2]//div[3]//button[2]'
     ).click()
     cy.xpath(
-      '//div[@class="ismart-klwhgf-Block-container"]//div[2]//div[1]//div[2]//div[3]//button[2]'
+      '//div[@class="ismart-be45cp-Flexbox-container"]//div[3]//div[1]//div[1]//div[3]//button[2]'
     ).click()
+    cy.xpath('//div[4]//div[1]//div[2]//div[3]//button[2]').click()
+    cy.xpath('//span[@class="ismart-3nfsk1-Icon-container"]//*[name()="svg"]').click()
     cy.xpath('//button[@class="ismart-1kxq8zk-Button-container"]').click()
-
+    // Заполнение карточной формы (данные по карте и клик на оплату)
     cy.wait(3000 as number)
     cy.get('iframe')
       .eq(0)
@@ -38,7 +39,6 @@ describe('shop test', () => {
         cy.wait(2000)
         const payButton = body.find('[automation-id="card-form__submit"]')
         cy.wrap(payButton).click()
-        // Заполнение карточной формы (данные по карте и клик на оплату)
       })
   })
 })
