@@ -14,26 +14,18 @@ describe('Creating homework', () => {
     cy.xpath('//button[@class="ismart-omlitb-Button-container"]').click()
     cy.xpath('//span[@class="ismart-43gl9z-Icon-container"]//*[name()="svg"]').click()
     cy.xpath('//button[@class="ismart-1m7kcmj-Button-container"]').click()
-    cy.xpath('//h4[contains(text(),"Математика (Расширенная версия)")]').click()
-    cy.xpath(
-      '//a[contains(text(),"Пространственные представления: наверху - внизу")]'
-    ).click()
-    cy.xpath(
-      '//p[contains(text(),"Пространственные представления: наверху - внизу")]'
-    ).click()
+    cy.xpath('//h1[contains(text(),"Логика")]').click()
+    cy.xpath('//a[contains(text(),"Логические задачи 1 класс (часть 1)")]').click()
+    cy.xpath('//p[contains(text(),"Задачи на внимание")]').click()
     cy.xpath('//button[@class="ismart-16zkzwl-Button-container"]').click()
     cy.contains(currentDate).should('exist')
     // Для одного ученика + с датой окончания != текущему дню
     cy.xpath('//button[contains(text(),"Создать занятие")]').click()
     cy.xpath('//button[@class="ismart-omlitb-Button-container"]').click()
     cy.xpath('//button[@class="ismart-1m7kcmj-Button-container"]').click()
-    cy.xpath('//h4[contains(text(),"Математика (Расширенная версия)")]').click()
-    cy.xpath(
-      '//a[contains(text(),"Пространственные представления: наверху - внизу")]'
-    ).click()
-    cy.xpath(
-      '//p[contains(text(),"Пространственные представления: наверху - внизу")]'
-    ).click()
+    cy.xpath('//h1[contains(text(),"Логика")]').click()
+    cy.xpath('//a[contains(text(),"Логические задачи 1 класс (часть 1)")]').click()
+    cy.xpath('//p[contains(text(),"Задачи на внимание")]').click()
     cy.xpath(
       '//button[@class="ismart-3qmtd6-Button-container"]//span[@class="ismart-1pqq9jl-Icon-container"]//*[name()="svg"]'
     ).click()
@@ -41,7 +33,7 @@ describe('Creating homework', () => {
       '//div[@class="ismart-wq0rxi-Flexbox-container"]//div[2]//div[2]//div[1]//div[1]//div[1]//div[1]//div[1]//input[1]'
     ).click()
     cy.xpath('//button[contains(text(),"Сегодня")]').should('be.disabled')
-    cy.xpath('//span[contains(text(),"16 учеников")]').click()
+    cy.xpath('//span[contains(text(),"17 учеников")]').click()
     cy.xpath(
       '//div[@class="ismart-1yrf1jo-Flexbox-container"]//span[@class="ismart-w1blmz-Icon-container-Checkbox-icon"]//*[name()="svg"]'
     ).click()

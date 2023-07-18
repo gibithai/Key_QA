@@ -11,7 +11,7 @@ describe('Add student', () => {
     cy.xpath('//button[contains(text(),"Войти")]').click()
     cy.xpath('//span[contains(text(),"Кабинет учителя")]').click()
     cy.xpath('//button[contains(text(),"Управление классами")]').click()
-    cy.xpath('//button[contains(text(),"Добавить ученика")]').click()
+    cy.xpath('//button[contains(text(),"Добавить учеников")]').click()
     cy.xpath('//textarea[@placeholder="Каждый ученик с новой строки"]').type(studentName)
     cy.xpath('//button[contains(text(),"Сохранить")]').click()
     cy.contains(studentName).should('be.visible')

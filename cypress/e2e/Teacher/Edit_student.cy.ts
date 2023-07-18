@@ -12,7 +12,7 @@ describe('Edit student', () => {
     cy.xpath('//span[contains(text(),"Кабинет учителя")]').click()
     cy.xpath('//button[contains(text(),"Управление классами")]').click()
     cy.xpath(
-      '//div[@class="ismart-aniv23-Flexbox-container"]//div[3]//div[1]//button[1]//span[1]//*[name()="svg"]'
+      '//button[@class="ismart-fgqv0o-Button-container"]//span[@class="ismart-1d58i9n-Icon-container"]//*[name()="svg"]'
     ).click()
     // Редактируем имя и Фамилию
     cy.xpath('//p[contains(text(),"Редактировать")]').click()
