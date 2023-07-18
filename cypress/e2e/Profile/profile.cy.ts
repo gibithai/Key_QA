@@ -4,7 +4,7 @@ describe('ParentProfile', () => {
   const BASE_URL = Cypress.env('BASE_URL')
 
   // Функция для выполнения всех действий
-  function performActions(parentLogin, parentPassword) {
+  function performActions (parentLogin, parentPassword) {
     cy.visit(BASE_URL)
 
     cy.xpath('//div[@class="ismart-5mymc9-Flexbox-container"]').click()
@@ -17,11 +17,9 @@ describe('ParentProfile', () => {
     cy.xpath('//p[contains(text(),"Профиль")]').contains('Профиль').click()
   }
   it('Вход под кредами пользователя', () => {
-    cy.viewport(1920, 1080)
     performActions(parentLogin, parentPassword)
   })
   it('Изменение имени', () => {
-    cy.viewport(1920, 1080)
     performActions(parentLogin, parentPassword)
 
     // Остальные действия для изменения имени здесь...
@@ -32,7 +30,6 @@ describe('ParentProfile', () => {
   })
 
   it('Изменение фамилии', () => {
-    cy.viewport(1920, 1080)
     performActions(parentLogin, parentPassword)
     cy.xpath('//p[contains(text(),"Фамилия")]').click()
     cy.xpath('//input[@placeholder="Фамилия"]').clear().type('Test2')
@@ -41,7 +38,6 @@ describe('ParentProfile', () => {
   })
 
   it('Изменение номера телефона', () => {
-    cy.viewport(1920, 1080)
     performActions(parentLogin, parentPassword)
     cy.xpath('//p[contains(text(),"Телефон")]').click()
     cy.xpath('//input[@placeholder="Телефон"]').clear().type('+79131234561')
@@ -50,7 +46,6 @@ describe('ParentProfile', () => {
   })
 
   it('Изменение логина', () => {
-    cy.viewport(1920, 1080)
     performActions(parentLogin, parentPassword)
     cy.xpath('//p[contains(text(),"Логин")]').click()
     cy.xpath('//input[@placeholder="Новый логин"]').type('Parent111111@ismart.org')
@@ -74,7 +69,6 @@ describe('ParentProfile', () => {
     cy.xpath('//button[contains(text(),"Сохранить")]').click()
   })
   it('Изменение пароля', () => {
-    cy.viewport(1920, 1080)
     performActions(parentLogin, parentPassword)
     cy.xpath('//p[contains(text(),"Пароль")]').click()
     cy.xpath('//input[@placeholder="Текущий пароль"]').type('123456')
@@ -101,7 +95,6 @@ describe('ParentProfile', () => {
     cy.xpath('//button[contains(text(),"Сохранить")]').click()
   })
   it('Изменение почты', () => {
-    cy.viewport(1920, 1080)
     performActions(parentLogin, parentPassword)
     cy.xpath('//p[contains(text(),"Почта")]').click()
     cy.xpath('//input[@placeholder="Почта"]').clear().type('ismartTester@yandex.ru')
@@ -117,7 +110,6 @@ describe('ParentProfile', () => {
     cy.xpath('//input[@placeholder="Почта"]').should('have.value', 'parent@ismart.org')
   })
   it('Изменение аватара', () => {
-    cy.viewport(1920, 1080)
     performActions(parentLogin, parentPassword)
     const fileName = 'avatarParent.jpg'
     const fileType = 'image/jpeg'
