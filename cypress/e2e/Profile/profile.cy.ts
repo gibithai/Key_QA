@@ -21,8 +21,6 @@ describe('ParentProfile', () => {
   })
   it('Изменение имени', () => {
     performActions(parentLogin, parentPassword)
-
-    // Остальные действия для изменения имени здесь...
     cy.xpath('//p[contains(text(),"Имя")]').click()
     cy.xpath('//input[@placeholder="Имя"]').clear().type('Test1')
     cy.xpath('//button[contains(text(),"Сохранить")]').click()
