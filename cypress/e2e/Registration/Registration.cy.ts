@@ -11,7 +11,7 @@ describe('test registration', () => {
     cy.xpath('//div[@class="ismart-4sxigk-Flexbox-container"]').click()
 
     // генерится рандомный мэйл дял атворизации
-
+    //
     // cy.get('.ismart-mgi866-Flexbox-container')
     // .should('contain', 'Регистрация')
     // необязательная доп проверка что это форма регистрации
