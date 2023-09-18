@@ -27,6 +27,7 @@ describe('AuthorizationISMART', () => {
     cy.contains('Test1').should('be.visible')
     cy.xpath('//div[@class="ismart-5mymc9-Flexbox-container"]').click()
     cy.xpath('//p[contains(text(),"Выйти")]').click()
+    cy.wait(3000 as number)
     cy.xpath('//div[@class="ismart-5mymc9-Flexbox-container"]')
       .click()
       .xpath('//p[contains(text(),"Войти")]')
@@ -62,6 +63,7 @@ describe('AuthorizationISMART', () => {
     cy.contains('Учитель').should('be.visible')
     cy.xpath('//div[@class="ismart-5mymc9-Flexbox-container"]').click()
     cy.xpath('//p[contains(text(),"Выйти")]').click()
+    cy.wait(3000 as number)
   })
 
   it('Positive authorization for Admin', () => {
@@ -77,6 +79,7 @@ describe('AuthorizationISMART', () => {
       .click()
       .xpath('//p[contains(text(),"Выйти")]')
       .click()
+    cy.wait(3000 as number)
     cy.xpath('//div[@class="ismart-5mymc9-Flexbox-container"]').click()
     cy.xpath('//p[contains(text(),"Войти")]').click()
     cy.xpath('//input[@name="login"]').type(negAdminEmailP)
