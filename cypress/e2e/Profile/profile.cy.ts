@@ -6,7 +6,6 @@ describe('ParentProfile', () => {
   // Функция для выполнения всех действий
   function performActions (parentLogin, parentPassword) {
     cy.visit(BASE_URL)
-
     cy.xpath('//div[@class="ismart-5mymc9-Flexbox-container"]').click()
     cy.xpath('//p[contains(text(),"Войти")]').click()
     cy.xpath('//input[@name="login"]').type(parentLogin)
