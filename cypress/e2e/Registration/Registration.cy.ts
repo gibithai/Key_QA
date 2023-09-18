@@ -1,19 +1,15 @@
 describe('test registration', () => {
   const userEmail = Math.random().toString(16) + '@ismart.org'
   const userPassword = 'Santasan11'
-  const userName = 'Mister Key'
+  const userName = 'MisterKey'
   const userNumber = '+7 (930) 444-44-44'
   const className = 'A'
   const studentName = 'Mister A'
 
+  // генерится рандомный мэйл для авторизации и пароль
   it('test registration positive', () => {
     cy.visit(String(Cypress.env('BASE_URL')) + 'auth/register')
-    cy.xpath('//div[@class="ismart-4sxigk-Flexbox-container"]').click()
-
-    // генерится рандомный мэйл дял атворизации
-    // cy.get('.ismart-mgi866-Flexbox-container')
-    // .should('contain', 'Регистрация')
-    // необязательная доп проверка что это форма регистрации
+    cy.xpath('//div[@class="ismart-1q609jp-Flexbox-container"]').click()
 
     cy.xpath('//input[@placeholder="Ваша электронная почта"]')
       .type(userEmail)
@@ -24,14 +20,9 @@ describe('test registration', () => {
       .should('have.value', userPassword)
 
     cy.xpath('//button[contains(text(),"Продолжить")]').click()
-    /* заканчивается форма регистрации
-           и дальше отркывается окно с именем и номером */
+    /* заканчивается форма регистрации и дальше открывается окно с именем родителя и номером телефона */
 
-    cy.xpath('//div[@class="ismart-15vthlk-username-content"]').click()
-
-    cy.xpath('//input[@placeholder="Иванова Мария Александровна"]')
-      .type(userName)
-      .should('have.value', userName)
+    cy.xpath('//div[@class="ismart-1sxq380-username-field"]').type(userName)
 
     cy.xpath('//input[@placeholder="+7 (999) 999-99-99"]')
       .type(userNumber.slice(2))
@@ -39,21 +30,11 @@ describe('test registration', () => {
 
     cy.xpath('//button[contains(text(),"Продолжить")]').click()
 
-    cy.xpath('//div[@class="ismart-1yej63f-Select-selectedArea"]').click()
-    cy.xpath('//div[normalize-space()="4"]').click()
-    cy.xpath('//input[@placeholder="«_»"]')
-      .type(className)
-      .should('have.value', className)
-    // здесь подставляется класс
-    cy.xpath('//button[contains(text(),"Продолжить")]').click()
+    // переход на страницу создания имени ученика
 
-    cy.xpath('//textarea[@placeholder="Каждый ученик с новой строки"]')
-      .type(studentName)
-      .should('have.value', studentName)
-    // здесь подставляется имя студента
+    cy.xpath('//div[@class="ismart-14hzrlr-Field-content"]').type(studentName)
     cy.xpath('//button[contains(text(),"Продолжить")]').click()
-
-    cy.xpath('//button[contains(text(),"Начать работу")]').click()
+    cy.xpath('//button[contains(text(),"Пропустить обучение")]').click()
     // окончание теста. Пользователь зарегистрирован в системе
   })
 })
