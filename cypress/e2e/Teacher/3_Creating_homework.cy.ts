@@ -15,7 +15,6 @@ describe('Creating homework', () => {
     cy.xpath('//span[@class="ismart-43gl9z-Icon-container"]//*[name()="svg"]').click()
     cy.xpath('//button[@class="ismart-1m7kcmj-Button-container"]').click()
     cy.xpath('//h1[contains(text(),"Логика")]').click()
-    cy.xpath('//a[contains(text(),"Логические задачи 1 класс (часть 1)")]').click()
     cy.xpath('//p[contains(text(),"Задачи на внимание")]').click()
     cy.xpath('//button[@class="ismart-16zkzwl-Button-container"]').click()
     cy.contains(currentDate).should('exist')
@@ -24,7 +23,6 @@ describe('Creating homework', () => {
     cy.xpath('//button[@class="ismart-omlitb-Button-container"]').click()
     cy.xpath('//button[@class="ismart-1m7kcmj-Button-container"]').click()
     cy.xpath('//h1[contains(text(),"Логика")]').click()
-    cy.xpath('//a[contains(text(),"Логические задачи 1 класс (часть 1)")]').click()
     cy.xpath('//p[contains(text(),"Задачи на внимание")]').click()
     cy.xpath(
       '//button[@class="ismart-3qmtd6-Button-container"]//span[@class="ismart-1pqq9jl-Icon-container"]//*[name()="svg"]'
@@ -33,7 +31,7 @@ describe('Creating homework', () => {
       '//div[@class="ismart-wq0rxi-Flexbox-container"]//div[2]//div[2]//div[1]//div[1]//div[1]//div[1]//div[1]//input[1]'
     ).click()
     cy.xpath('//button[contains(text(),"Сегодня")]').should('be.disabled')
-    cy.xpath('//span[contains(text(),"17 учеников")]').click()
+    cy.xpath('//span[contains(text(),"1 ученик")]').click()
     cy.xpath(
       '//div[@class="ismart-1yrf1jo-Flexbox-container"]//span[@class="ismart-w1blmz-Icon-container-Checkbox-icon"]//*[name()="svg"]'
     ).click()
