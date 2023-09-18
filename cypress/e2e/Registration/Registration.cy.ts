@@ -3,7 +3,6 @@ describe('test registration', () => {
   const userPassword = 'Santasan11'
   const userName = 'MisterKey'
   const userNumber = '+7 (930) 444-44-44'
-  const className = 'A'
   const studentName = 'Mister A'
 
   // генерится рандомный мэйл для авторизации и пароль
