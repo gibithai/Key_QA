@@ -34,7 +34,7 @@ describe('shop test', () => {
         const body = iframe.contents().find('body')
         const cvc = body.find('[automation-id="tui-input-card-grouped__cvc"]')
         cy.wrap(cvc).focus().type('123')
-        cy.wait(2000)
+        cy.wait(2000 as number)
         const payButton = body.find('[automation-id="card-form__submit"]')
         cy.wrap(payButton).click()
       })
