@@ -14,7 +14,8 @@ describe('Creating homework', () => {
     cy.xpath('//button[@class="ismart-omlitb-Button-container"]').click()
     cy.xpath('//span[@class="ismart-43gl9z-Icon-container"]//*[name()="svg"]').click()
     cy.xpath('//button[@class="ismart-1m7kcmj-Button-container"]').click()
-    cy.xpath('//h1[contains(text(),"Логика")]').click()
+    cy.xpath('//h1[contains(text(),"Логика")]').scrollIntoView()
+    cy.xpath('//h1[contains(text(),"Логика")]').click({ force: true })
     cy.xpath('//p[contains(text(),"Задачи на внимание")]').click()
     cy.xpath('//button[@class="ismart-16zkzwl-Button-container"]').click()
     cy.contains(currentDate).should('exist')
@@ -22,7 +23,8 @@ describe('Creating homework', () => {
     cy.xpath('//button[contains(text(),"Создать занятие")]').click()
     cy.xpath('//button[@class="ismart-omlitb-Button-container"]').click()
     cy.xpath('//button[@class="ismart-1m7kcmj-Button-container"]').click()
-    cy.xpath('//h1[contains(text(),"Логика")]').click()
+    cy.xpath('//h1[contains(text(),"Логика")]').scrollIntoView()
+    cy.xpath('//h1[contains(text(),"Логика")]').click({ force: true })
     cy.xpath('//p[contains(text(),"Задачи на внимание")]').click()
     cy.xpath(
       '//button[@class="ismart-3qmtd6-Button-container"]//span[@class="ismart-1pqq9jl-Icon-container"]//*[name()="svg"]'
