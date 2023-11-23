@@ -4,7 +4,7 @@ describe('guest diagnostic', () => {
     cy.visit(String(Cypress.env('BASE_URL')) + 'diagnostics')
     cy.xpath('//div[@class="ismart-1ec8ovj-Flexbox-container"]').click()
     cy.xpath(
-      '//body/div[@id="app"]/div[@class="ismart-r38pru-ScrollView-wrapper"]/div[@class="ismart-1xtyevz-ScrollView-container"]/div[@class="ismart-5792gp-ScrollView-content"]/div[@class="ismart-1v2fkka-Flexbox-container"]/div[@class="ismart-ha16e2-Flexbox-container"]/div[@class="ismart-14t7r2j-Flexbox-container"]/div[@class="ismart-fqdmot-Flexbox-container"]/div[1]'
+      '//body/div[@id="app"]/div[@class="ismart-r38pru-ScrollView-wrapper"]/div[@class="ismart-1xtyevz-ScrollView-container"]/div[@class="ismart-5792gp-ScrollView-content"]/div[@class="ismart-1v2fkka-Flexbox-container"]/div[@class="ismart-ha16e2-Flexbox-container"]/div[@class="ismart-be45cp-Flexbox-container"]/div[@class="ismart-1hk1yva-Flexbox-container"]/div[@class="ismart-14t7r2j-Flexbox-container"]/div[@class="ismart-fqdmot-Flexbox-container"]/div[1]'
     ).click()
 
     cy.wait(2000 as number)
