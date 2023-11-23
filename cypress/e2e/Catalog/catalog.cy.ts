@@ -1,6 +1,8 @@
 describe('catalog functionallity', () => {
   it('catalog tests', () => {
     cy.visit(String(Cypress.env('BASE_URL')))
+    cy.scrollTo(0, 5000, { ensureScrollable: false })
+    cy.wait(1000 as number)
     cy.xpath('//div[@class="ismart-1pyk4il-Flexbox-container"]//div[1]')
       .click()
       .wait(1000 as number)

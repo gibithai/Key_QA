@@ -15,10 +15,10 @@ describe('guest diagnostic', () => {
       // Цикл для повторения шагов с ответами диагностики
       cy.wait(2000 as number)
       if (Math.round(Math.random()) === 1) {
+        // Функция, которая рандомно генерит правильные и неверные ответы
         cy.get('#dev-menu__button_right').click()
       } else {
         cy.get('#dev-menu__button_wrong').click()
-        // Функция, которая рандомно генерит правильные и неверные ответы
       }
     }
   })
