@@ -1,6 +1,11 @@
+/*
+As a guest i want to visit "canary.ismart.org"
+go throught the diagnostics
+then complete it for better undertanding which subjects student should learn
+and receive recommendations and comments
+*/
 describe('guest diagnostic', () => {
-  it('Тест диагностики для гостя', () => {
-    // переходим на страницу диагностики
+  it('Test giagnostics for Guest ', () => {
     cy.visit(String(Cypress.env('BASE_URL')) + 'diagnostics')
     cy.xpath('//div[@class="ismart-1ec8ovj-Flexbox-container"]').click()
     cy.xpath(
@@ -12,10 +17,8 @@ describe('guest diagnostic', () => {
     cy.xpath('//div[@class="ismart-sp7kbe-Flexbox-container"]').click()
     cy.xpath('//button[contains(text(),"Начать")]').click()
     for (let i = 0; i <= 14; i++) {
-      // Цикл для повторения шагов с ответами диагностики
       cy.wait(2000 as number)
       if (Math.round(Math.random()) === 1) {
-        // Функция, которая рандомно генерит правильные и неверные ответы
         cy.get('#dev-menu__button_right').click()
       } else {
         cy.get('#dev-menu__button_wrong').click()

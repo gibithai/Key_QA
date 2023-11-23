@@ -1,3 +1,9 @@
+/*
+As a user
+I want to make negative authorization to platform
+And check negative authorization process for 3 roles (Parent, Teacher, Admin)
+And the result of this test should failed
+*/
 describe('AuthorizationISMART', () => {
   // Parent
   const parentEmail = 'parent@ismart.org'

@@ -1,18 +1,23 @@
+/*
+As a user
+I want to make positive authorization to platform
+And check authorization process for 3 roles (Parent, Teacher, Admin)
+*/
 describe('AuthorizationISMART', () => {
   // Parent
   const parentEmail = 'parent@ismart.org'
   const parentPassword = '123456'
-  const negParentEmailP = 'Parent@ismart.org' // для тестирования верхнего регистра
+  const negParentEmailP = 'Parent@ismart.org'
 
   // Teacher
   const teacherEmail = 'teacher@ismart.org'
   const teacherPassword = '123456'
-  const negTeacherEmailP = 'Teacher@ismart.org' // для тестирования верхнего регистра
+  const negTeacherEmailP = 'Teacher@ismart.org'
 
   // Admin
   const adminEmail = 'admin@ismart.org'
   const adminPassword = '123456'
-  const negAdminEmailP = 'Admin@ismart.org' // для тестирования верхнего регистра
+  const negAdminEmailP = 'Admin@ismart.org'
 
   it('Positive authorization for Parent', () => {
     cy.visit(Cypress.env('BASE_URL'))

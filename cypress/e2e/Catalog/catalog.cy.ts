@@ -1,3 +1,10 @@
+/*
+As a guest i want to visit the "Ismart" platform
+Check the catalog functionallity
+And test filters scrolls, radio buttons
+Then user will able to see all subjects which represented in Catalog page
+*/
+
 describe('catalog functionallity', () => {
   it('catalog tests', () => {
     cy.visit(String(Cypress.env('BASE_URL')))
@@ -18,4 +25,3 @@ describe('catalog functionallity', () => {
     cy.go('back')
   })
 })
-// Тесты по выборке предметов в каталоге, проверка каталога
